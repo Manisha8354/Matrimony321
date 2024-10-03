@@ -12,7 +12,7 @@ export default function ContactUs() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await axios.post('http://localhost:3000/api/contactSave',formData)
+    await axios.post('https://actl.co.in/api/contactSave',formData)
   }
 
   const [formErrors, setFormErrors] = useState({});

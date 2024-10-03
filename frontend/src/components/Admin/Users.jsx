@@ -7,7 +7,7 @@ export default function Users() {
       let [data,setData]=useState([])
 
       async function getProfile(){
-        let result = await axios.get('http://localhost:3000/api/viewSign')
+        let result = await axios.get('https://actl.co.in/api/viewSign')
         setData(result.data)
     }   
     
@@ -18,7 +18,7 @@ export default function Users() {
     async function handlependingStatus(id) {
        let flag = confirm('Are U Sure To Accept the Profile')
        if(flag){
-        const response = await axios.put(`http://localhost:3000/api/updateProfile/${id}`,{
+        const response = await axios.put(`https://actl.co.in/api/updateProfile/${id}`,{
           status:'confirm'
         })
         getProfile()
@@ -27,7 +27,7 @@ export default function Users() {
     async function handledecineStatus(id) {
       let flag = confirm('Are U Sure To Reject the Profile')
       if(flag){
-       const response = await axios.put(`http://localhost:3000/api/updateProfile/${id}`,{
+       const response = await axios.put(`https://actl.co.in/api/updateProfile/${id}`,{
          status:'pending'
        })
        getProfile()
@@ -59,7 +59,7 @@ export default function Users() {
             {data.map((data,key) => (
               <tr
                 key={key}
-                className="border-t hover:bg-blue-50 transition duration-300 ease-in-out transform hover:scale-105"
+                className="border-t hover:bg-blue-50 transition duration-300 ease-in-out transform"
               >
                 <td className="px-4 py-4 text-gray-700 text-center">{data.name}</td>
                 <td className="px-4 py-4 text-gray-700 text-center">{data.email}</td>

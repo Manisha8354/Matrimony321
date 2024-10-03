@@ -13,7 +13,7 @@ export default function EditUser() {
 
 
 //   async function editUser(id){
-//     let result = await axios.get(`http://localhost:3000/api/getsignbyid/${id}`)
+//     let result = await axios.get(`https://actl.co.in/api/getsignbyid/${id}`)
 //     setFormData(result.data[0])
 // }
 // useEffect(()=>{
@@ -30,7 +30,7 @@ export default function EditUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-        const response = await axios.put(`http://localhost:3000/api/upadteSign/${id}`, formData);
+        const response = await axios.put(`https://actl.co.in/api/upadteSign/${id}`, formData);
         navigator('/admin/users')
       
   };
@@ -67,7 +67,7 @@ export default function EditUser() {
             type="submit"
             className="w-full bg-gradient-to-r from-amber-600 to-amber-900 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:from-amber-700 hover:to-amber-800 transition-transform transform hover:scale-105"
           >
-            Sign Up
+            Change
           </button>
         </form>
       </motion.div>

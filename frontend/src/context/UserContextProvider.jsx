@@ -12,7 +12,7 @@ export default function UserContextProvider({children}) {
     })
 
     let userLogin = async (data)=>{
-      const response = await axios.post('http://localhost:3000/api/clientLogin', data);
+      const response = await axios.post('https://actl.co.in/api/clientLogin', data);
         if(response.data.isMatch == true){
             setFlag(true)
             let token = response.data.token
@@ -27,7 +27,7 @@ export default function UserContextProvider({children}) {
     let verifyClient = async ()=>{
         let token =localStorage.getItem('token')
         if(token){
-            let result = await axios.post('http://localhost:3000/api/clientVerify',{},{
+            let result = await axios.post('https://actl.co.in/api/clientVerify',{},{
                 headers:{
                     'Authorization':`Bearer ${token}`
                 }

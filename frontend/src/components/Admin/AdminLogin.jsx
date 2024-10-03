@@ -23,7 +23,7 @@ export default function AdminLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await axios.post('http://localhost:3000/api/adminLogin', formData);
+    const result = await axios.post('https://actl.co.in/api/adminLogin', formData);
       if(result.data == true){
         navigator('/admin')
         setAdminFlag(true)

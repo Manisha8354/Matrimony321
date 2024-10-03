@@ -21,12 +21,12 @@ export default function Sign() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      const result = await axios.get(`http://localhost:3000/api/getsignbyemail/${formData.email}`);
+      const result = await axios.get(`https://actl.co.in/api/getsignbyemail/${formData.email}`);
       console.log(result)
       if(result.data == true){
         alert('Email already Register !')
       }else{
-        const response = await axios.post('http://localhost:3000/api/signSave', formData);
+        const response = await axios.post('https://actl.co.in/api/signSave', formData);
         navigator('/login')
       }
   };

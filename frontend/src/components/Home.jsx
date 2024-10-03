@@ -58,7 +58,7 @@ let {First_Name, Email_Address,Phone_Number,Message}=formData;
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await axios.post('http://localhost:3000/api/enquirySave', formData);
+    const response = await axios.post('https://actl.co.in/api/enquirySave', formData);
     alert(response.data); // Display success message
   } catch (error) {
     console.error("There was an error submitting the enquiry!", error);
@@ -81,7 +81,7 @@ async function handleFilter(gender) {
   }else{
     setProfile('Bride')
   }
-  let result = await axios.get('http://localhost:3000/api/getProfile')
+  let result = await axios.get('https://actl.co.in/api/getProfile')
   let filerData  = result.data.filter((x)=> x.gender == gender)
   setData(filerData)
 }
@@ -112,9 +112,9 @@ const validateForm = () => {
 let [data,setData]=useState([])
 
 async function getProfile(){
-  let responce = await axios.get('http://localhost:3000/api/getStatus')
+  let responce = await axios.get('https://actl.co.in/api/getStatus')
   setStatus(responce.data[0])
-  let result = await axios.get('http://localhost:3000/api/getProfile')
+  let result = await axios.get('https://actl.co.in/api/getProfile')
   let final = result.data.filter((x)=> x.status == 'confirm')
   setData(final)
 }  
@@ -314,7 +314,7 @@ useEffect(()=>{
           {/* Circular Image */}
           <div className="flex justify-center mb-4">
             <img
-              src={`http://localhost:3000/${data.image}`} // Mapped image from data
+              src={`https://actl.co.in/matrimonial_uploads/${data.image}`} // Mapped image from data
               alt={`${data.first_name} ${data.last_name}`} 
               className="w-24 h-24 rounded-full object-cover border-4 border-amber-600 shadow-md"
             />

@@ -14,7 +14,7 @@ export default function Profile() {
 
   async function getData() {
     if(auth.userData){
-      let result = await axios.get(`http://localhost:3000/api/getsignbyid/${auth.userData.id}`)
+      let result = await axios.get(`https://actl.co.in/api/getsignbyid/${auth.userData.id}`)
     if(result.data.paymen_status == 'confirm'){
       setData(result.data)
       setButton('view')
@@ -30,7 +30,7 @@ export default function Profile() {
     getData()
   }, [auth.userData])
   async function viewProfile() {
-    let result = await axios.get(`http://localhost:3000/api/viewProfile/${id}`)
+    let result = await axios.get(`https://actl.co.in/api/viewProfile/${id}`)
     setView(result.data)
   }
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Profile() {
 
   async function handleShow() {
     if ((data.paymen_status == 'confirm') && (data.current_limit < 22)) {
-      await axios.put(`http://localhost:3000/api/upadteSign/${data.id}`, {
+      await axios.put(`https://actl.co.in/api/upadteSign/${data.id}`, {
         current_limit: +data.current_limit + 1
       })
       setShow(true)
@@ -53,12 +53,12 @@ export default function Profile() {
       <div className="relative h-[72px] w-full bg-gradient-to-r from-amber-700 to-red-950"></div>
 
       {view.map((data, key) => (
-        <div key={key} className="flex flex-col md:flex-row w-3/4 mx-auto mb-10 border rounded-lg overflow-hidden shadow-lg p-4 bg-gray-300">
+        <div key={key} className="flex flex-col md:flex-row md:w-3/4 mx-auto mb-10 border rounded-lg overflow-hidden shadow-lg p-4 bg-gray-300">
 
           {/* Image Section */}
           <div className="md:w-1/2 flex justify-center items-center pt-4 pr-6 pb-4 pl-8 rounded-lg">
             <img
-              src={`http://localhost:3000/${data.image}`}
+              src={`https://actl.co.in/matrimonial_uploads/${data.image}`}
               alt="Profile Image"
               className="w-full h-[300px] md:h-[400px] object-cover hover:scale-105 transition-transform duration-300 ease-in-out rounded-lg"
             />

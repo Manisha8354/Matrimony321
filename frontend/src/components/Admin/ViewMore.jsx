@@ -9,7 +9,7 @@ let [view,setView]=useState([])
 let {id} = useParams()
 
 async function viewProfile(){
-    let result = await axios.get(`http://localhost:3000/api/viewProfile/${id}`)
+    let result = await axios.get(`https://actl.co.in/api/viewProfile/${id}`)
     setView(result.data)
     // console.log(result.data)
 }
@@ -27,7 +27,7 @@ viewProfile()
     {/* Image Section */}
     <div className="md:w-1/2 flex justify-center items-center">
   <img
-    src={`http://localhost:3000/${data.image}`}
+    src={`https://actl.co.in/matrimonial_uploads/${data.image}`}
     alt="Profile Image"
     className="w-full h-[300px] md:h-[400px] object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
   />

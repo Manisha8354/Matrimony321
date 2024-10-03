@@ -14,7 +14,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await axios.put('http://localhost:3000/api/updateStatus', {
+    const response = await axios.put('https://actl.co.in/api/updateStatus', {
       message:status
     });
     alert("Status Update"); // Show success message

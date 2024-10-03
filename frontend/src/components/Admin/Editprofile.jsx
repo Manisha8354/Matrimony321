@@ -129,7 +129,7 @@ let navigation = useNavigate()
 
 
   async function viewProfile(){
-    let result = await axios.get(`http://localhost:3000/api/viewProfile/${id}`)
+    let result = await axios.get(`https://actl.co.in/api/viewProfile/${id}`)
     setFormData(result.data[0])
 }
 useEffect(()=>{
@@ -139,7 +139,7 @@ console.log(formData)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:3000/api/updateProfile/${id}`,{
+      const response = await axios.put(`https://actl.co.in/api/updateProfile/${id}`,{
         first_name:formData.first_name,
         last_name:formData.last_name,
         gotra:formData.gotra,

@@ -26,7 +26,7 @@ export default function Table() {
       let [data,setData]=useState([])
 
       async function getProfile(){
-        let result = await axios.get('http://localhost:3000/api/getProfile')
+        let result = await axios.get('https://actl.co.in/api/getProfile')
         setData(result.data)
     }   
     
@@ -37,7 +37,7 @@ export default function Table() {
     async function handlependingStatus(id) {
        let flag = confirm('Are U Sure To Accept the Profile')
        if(flag){
-        const response = await axios.put(`http://localhost:3000/api/updateProfile/${id}`,{
+        const response = await axios.put(`https://actl.co.in/api/updateProfile/${id}`,{
           status:'confirm'
         })
         getProfile()
@@ -46,7 +46,7 @@ export default function Table() {
     async function handledecineStatus(id) {
       let flag = confirm('Are U Sure To Reject the Profile')
       if(flag){
-       const response = await axios.put(`http://localhost:3000/api/updateProfile/${id}`,{
+       const response = await axios.put(`https://actl.co.in/api/updateProfile/${id}`,{
          status:'pending'
        })
        getProfile()

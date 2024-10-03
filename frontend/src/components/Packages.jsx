@@ -1,13 +1,14 @@
 import { CheckCircle } from 'lucide-react'
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import UserContext from '../context/UserContext'
 
 export default function Packages() {
-    return (
-      <div className='h-[80vh] bg-gray-400 relative'>
+      return (
+      <div className='h-[150vh] bg-gray-400 relative'>
         <div className='mt-[120px] absolute w-full text-center'>
           <h1 className='text-5xl uppercase font-bold tracking-wider text-white'>Packages</h1>
-          <div className='flex w-full justify-evenly mt-12'>
+          <div className='flex flex-col md:flex-row w-full justify-evenly mt-12 items-center gap-5'>
               <div className='h-[500px] w-[400px] rounded-xl bg-gradient-to-r from-amber-600 to-amber-900'>
                   <h1 className='text-3xl text-white uppercase font-semibold py-5 border-b-2 border-white '>Standard Package</h1>
                   <div className='w-full flex flex-col items-center gap-5 mt-8'>
